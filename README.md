@@ -4,6 +4,15 @@
 
 https://learn.microsoft.com/en-us/mem/configmgr/core/servers/manage/creating-custom-report-models-in-sql-server-reporting-services
 
+## German Learning Path Report Builder
+
+https://learn.microsoft.com/de-de/sql/reporting-services/report-builder-tutorials?view=sql-server-ver16
+
+https://learn.microsoft.com/de-de/sql/reporting-services/report-data/report-data-ssrs?view=sql-server-ver16
+
+
+
+
 ## All SCCM client computers with less than 1GB free disk space on C:
 ```sql
 select SMS_R_SYSTEM.ResourceID,SMS_R_SYSTEM.ResourceType,SMS_R_SYSTEM.Name,

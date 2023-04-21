@@ -71,3 +71,17 @@ where a.AssignmentID='xxxxxxxx'
 order by LastEnforcementState 
 
 ```
+
+## All Workstations with Failed Software Updates
+
+```sql
+select  SMS_R_SYSTEM.ResourceID, 
+        SMS_R_SYSTEM.ResourceType, 
+        SMS_R_SYSTEM.Name, 
+        SMS_R_SYSTEM.SMSUniqueIdentifier, 
+        SMS_R_SYSTEM.ResourceDomainORWorkgroup, 
+        SMS_R_SYSTEM.Client 
+from    sms_r_system 
+inner join SMS_UpdateComplianceStatus on SMS_UpdateComplianceStatus.machineid=sms_r_system.resourceid 
+where   SMS_UpdateComplianceStatus.LastEnforcementMessageID = 11
+```

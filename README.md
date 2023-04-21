@@ -55,3 +55,19 @@ from v_FullCollectionMembership where CollectionID = @CollectionID
 and ResourceID in ( select ResourceID from v_R_System where Operating_System_Name_and0 like '%Workstation%')
 order by 2 desc
 ```
+## SCCM SQL Query to get Last State computers in Software Update deployment
+```sql
+select  
+sn.StateName as LastEnforcementState,  
+vrs.name0 as ComputerName,  
+a.AssignmentName as DeploymentName,  
+assc.StateTime ,  
+a.CollectionName  
+from v_CIAssignment a  
+join v_AssignmentState_Combined assc on a.AssignmentID=assc.AssignmentID  
+join v_StateNames sn on assc.StateType = sn.TopicType and sn.StateID=isnull(assc.StateID,0)  
+join v_R_System vrs on vrs.ResourceID=assc.ResourceID  
+where a.AssignmentID='xxxxxxxx'  
+order by LastEnforcementState 
+
+```

@@ -85,3 +85,6 @@ from    sms_r_system
 inner join SMS_UpdateComplianceStatus on SMS_UpdateComplianceStatus.machineid=sms_r_system.resourceid 
 where   SMS_UpdateComplianceStatus.LastEnforcementMessageID = 11
 ```
+
+## SCCM SQL Querys
+https://eddiejackson.net/SCCM/SCCM_SQL_Queries.pdf
